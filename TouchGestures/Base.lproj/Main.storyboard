@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TouchGestures" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPW-gT-su4">
+                                <rect key="frame" x="50" y="308.5" width="275" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uj4-VV-qN4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NPW-gT-su4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="atY-nh-hLY"/>
+                            <constraint firstAttribute="trailing" secondItem="NPW-gT-su4" secondAttribute="trailing" constant="50" id="d0D-X3-gfG"/>
+                            <constraint firstItem="NPW-gT-su4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nRj-rc-Ro6"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="E6f-uf-f7y" appends="YES" id="12w-ZT-TGy"/>
+                            <outletCollection property="gestureRecognizers" destination="dLI-Zl-RJ8" appends="YES" id="SbU-X9-zCX"/>
+                            <outletCollection property="gestureRecognizers" destination="xew-OG-fLX" appends="YES" id="jbO-I0-srs"/>
+                            <outletCollection property="gestureRecognizers" destination="dsD-Bb-LhB" appends="YES" id="aMg-Jy-ism"/>
+                            <outletCollection property="gestureRecognizers" destination="YwF-QU-ijd" appends="YES" id="dxW-oz-JLN"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="doubleTapRecognizer" destination="dLI-Zl-RJ8" id="ZSr-Jr-gBa"/>
+                        <outlet property="labelGestureName" destination="NPW-gT-su4" id="yBi-rV-MYQ"/>
+                        <outlet property="singleTapRecognizer" destination="E6f-uf-f7y" id="s36-SS-FfW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="E6f-uf-f7y" userLabel="Single Tap">
+                    <connections>
+                        <action selector="userSingleTap:" destination="BYZ-38-t0r" id="YSI-F5-DLH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="dLI-Zl-RJ8" userLabel="Double Tap">
+                    <connections>
+                        <action selector="userDoubleTap:" destination="BYZ-38-t0r" id="ala-ek-Fj3"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="YwF-QU-ijd" userLabel="Pinch">
+                    <connections>
+                        <action selector="userPinched:" destination="BYZ-38-t0r" id="4V0-oQ-RhN"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="xew-OG-fLX" userLabel="Swipe Right">
+                    <connections>
+                        <action selector="userSwiped:" destination="BYZ-38-t0r" id="6zA-GP-yxT"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <rotationGestureRecognizer id="dsD-Bb-LhB" userLabel="Rotation">
+                    <connections>
+                        <action selector="userRotated:" destination="BYZ-38-t0r" id="8FV-wc-sQL"/>
+                    </connections>
+                </rotationGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>
